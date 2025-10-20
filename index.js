@@ -30,6 +30,7 @@ db.connect((err) => {
     console.log('Connection Successfully');
 })
 
+// API Endpoint untuk READ/GET
 app.get('/api/users/', (req, res) => {
   db.query('SELECT * FROM mahasiswa', (err, results) => {
     if (err) {
@@ -41,6 +42,7 @@ app.get('/api/users/', (req, res) => {
   })
 })
 
+// API Endpoint untuk Create/POST
 app.post('/api/users', (req, res) => {
   const { nama, nim, kelas } = req.body;
 
@@ -61,6 +63,7 @@ app.post('/api/users', (req, res) => {
     })
 })
 
+// API Endpoint untuk Update/PUT
 app.put('/api/users/:id', (req, res) => {
   const userId = req.params.id;
   const { nama, nim, kelas } = req.body;
@@ -76,6 +79,7 @@ app.put('/api/users/:id', (req, res) => {
 })
 })
 
+// API Endpoint untuk Delete/DELETE
 app.delete('/api/users/:id', (req, res) => {
   const userId = req.params.id;
   db.query('DELETE FROM mahasiswa WHERE id = ?', [userId], (err, results) => {
