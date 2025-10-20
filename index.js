@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Server dah jalan ni cuy http://localhost:${port}`);
+  console.log(`Server dah jalan ni cuyyy http://localhost:${port}`);
 })
 
 const db = mysql.createConnection({
